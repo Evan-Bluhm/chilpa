@@ -24,6 +24,8 @@
 //! - where to read a track's original bytes, and a record's cover;
 //! - the listener's ratings and favorites of tracks and records, read and
 //!   written (`rating`, `favorite`), on the kinds that keep them;
+//! - what is playing and each play that counted, told to the server the
+//!   track came from (`plays`);
 //! - what a record, a track or an artist says, and changing it, with its
 //!   image, on the kinds that take such changes (`edit`).
 
@@ -35,6 +37,7 @@ pub mod model;
 pub mod media;
 pub mod net;
 pub mod playlist;
+pub mod plays;
 pub mod plex;
 pub mod rating;
 pub mod subsonic;

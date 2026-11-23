@@ -6697,6 +6697,9 @@ msgstr ""
 msgid "Report an issue"
 msgstr "Сообщить о проблеме"
 
+msgid "Report plays to servers"
+msgstr "Сообщать серверам о прослушиваниях"
+
 msgid "Report plugin errors in the corresponding plugin's repository."
 msgstr "Сообщайте об ошибках плагинов в репозитории соответствующего плагина."
 
@@ -7875,6 +7878,9 @@ msgstr "Целевая громкость"
 
 msgid "Technical data"
 msgstr "Технические данные"
+
+msgid "Tells a Subsonic server such as Navidrome what is playing, and counts each track played past halfway or for four minutes in its play count. Plays made offline go when the server can be reached."
+msgstr "Сообщает серверу Subsonic, например Navidrome, что сейчас играет, и засчитывает в счётчик прослушиваний каждый трек, прослушанный дольше половины или четырёх минут. Прослушивания без сети отправляются, когда сервер снова доступен."
 
 msgid "Temporary episode storage is unavailable."
 msgstr ""
@@ -11070,6 +11076,9 @@ msgstr "этот сервер не принимает описание плей�
 
 msgid "this server keeps no favorites Chilpa can change"
 msgstr "этот сервер не хранит избранного, которое Chilpa может изменить"
+
+msgid "this server keeps no plays Chilpa can report"
+msgstr "этот сервер не хранит прослушиваний, о которых Chilpa может сообщить"
 
 msgid "this server keeps no ratings Chilpa can change"
 msgstr "этот сервер не хранит оценок, которые Chilpa может изменить"

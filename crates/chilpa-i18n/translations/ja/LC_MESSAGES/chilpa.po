@@ -6685,6 +6685,9 @@ msgstr ""
 msgid "Report an issue"
 msgstr "問題を報告"
 
+msgid "Report plays to servers"
+msgstr "再生をサーバーに報告"
+
 msgid "Report plugin errors in the corresponding plugin's repository."
 msgstr "プラグインのエラーは、該当するプラグインのリポジトリで報告してください。"
 
@@ -7855,6 +7858,9 @@ msgstr "目標ラウドネス"
 
 msgid "Technical data"
 msgstr "技術データ"
+
+msgid "Tells a Subsonic server such as Navidrome what is playing, and counts each track played past halfway or for four minutes in its play count. Plays made offline go when the server can be reached."
+msgstr "Navidrome などの Subsonic サーバーに再生中の曲を伝え、半分以上または 4 分以上聴いた曲を再生回数に加えます。オフラインでの再生は、サーバーに接続できたときに送信されます。"
 
 msgid "Temporary episode storage is unavailable."
 msgstr ""
@@ -11042,6 +11048,9 @@ msgstr "このサーバーはChilpaからプレイリストの説明を受け付
 
 msgid "this server keeps no favorites Chilpa can change"
 msgstr "このサーバーにはChilpaが変更できるお気に入りがありません"
+
+msgid "this server keeps no plays Chilpa can report"
+msgstr "このサーバーにはChilpaが報告できる再生記録がありません"
 
 msgid "this server keeps no ratings Chilpa can change"
 msgstr "このサーバーにはChilpaが変更できる評価がありません"

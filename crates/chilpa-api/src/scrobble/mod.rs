@@ -305,8 +305,9 @@ pub(crate) fn listen_of(tags: Option<&chilpa_tags::Tags>, title: &str, artist: &
 
 /// Sends a track's listen once enough of it has been heard: now, filed
 /// under when it started, and not when it ends -- a crash or a closed
-/// window after the mark would lose it otherwise.
-pub(crate) fn if_heard(scrobbler: Option<&Scrobbler>, current: &mut crate::InProgress) {
+/// window after the mark would lose it otherwise. A track on a server is
+/// counted there too (`servers::plays`).
+pub(crate) fn if_heard(scrobbler: Option<&Scrobbler>, servers: Option<&crate::servers::plays::Reporter>, current: &mut crate::InProgress) {
     if current.scrobbled || current.sample_rate_hz == 0 {
         return;
     }
@@ -316,6 +317,7 @@ pub(crate) fn if_heard(scrobbler: Option<&Scrobbler>, current: &mut crate::InPro
         if let (Some(s), Some(listen)) = (scrobbler, &current.listen) {
             s.all(|| Order::Listened(listen.clone()));
         }
+        crate::servers::plays::played(servers, &current.path, current.started_at);
     }
 }
 

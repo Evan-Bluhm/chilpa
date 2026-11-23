@@ -68,7 +68,7 @@ impl Chilpa {
             PlayerEvent::StreamTitle { .. } => {}
             PlayerEvent::Progress { frames, played } => {
                 if let Some(listen) = self.plays.get_mut(id).and_then(|play| play.ledger.progress(played)) {
-                    crate::scrobble::if_heard(self.scrobbler.as_ref(), listen);
+                    crate::scrobble::if_heard(self.scrobbler.as_ref(), self.servers.plays.as_ref(), listen);
                 }
                 if shown {
                     self.now.frames = frames;
@@ -105,7 +105,7 @@ impl Chilpa {
             PlayerEvent::Closed { attempt, heard, how, .. } => {
                 if let Some(listen) = self.plays.get_mut(id).and_then(|play| play.ledger.listen_mut(attempt)) {
                     listen.played_frames = heard;
-                    crate::scrobble::if_heard(self.scrobbler.as_ref(), listen);
+                    crate::scrobble::if_heard(self.scrobbler.as_ref(), self.servers.plays.as_ref(), listen);
                 }
                 let written = self.plays.get_mut(id).map(|play| play.ledger.closed(attempt, heard, how, fate)).unwrap_or_default();
                 for written in written {
@@ -190,6 +190,9 @@ impl Chilpa {
         let listen = crate::scrobble::listen_of(tags, &context.title, &context.artist, &context.album, duration_ms, started_at);
         if let (true, Some(listen)) = (shown, &listen) {
             self.announce(listen);
+        }
+        if shown {
+            crate::servers::plays::playing(self.servers.plays.as_ref(), path);
         }
         self.home.changed();
         let Some(play) = self.plays.get_mut(id) else { return };

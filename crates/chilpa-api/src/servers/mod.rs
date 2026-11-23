@@ -15,6 +15,7 @@ pub(crate) mod net;
 mod opener;
 pub(crate) mod favorites;
 pub(crate) mod playlists;
+pub(crate) mod plays;
 pub(crate) mod ratings;
 mod reading;
 mod media;
@@ -111,6 +112,8 @@ pub(crate) struct Servers {
     /// The listener's rating changes on their way to servers and plugins
     /// (`crate::ratings::sync`).
     pub(crate) ratings: crate::ratings::sync::State,
+    /// What is played, on its way to the servers the tracks came from.
+    pub(crate) plays: Option<plays::Reporter>,
 }
 
 /// A server being written into the library, away from the window: the
@@ -149,6 +152,7 @@ impl Chilpa {
         self.servers.syncer = Some(sync::Syncer::start(Arc::clone(&keys), Arc::clone(&self.servers.gate)));
         self.servers.watcher = Some(watch::Watcher::start(Arc::clone(&keys), Arc::clone(&self.servers.gate),self.servers.invalid_copies.clone()));
         self.servers.writer = Some(writing::Writer::start(Arc::clone(&keys), Arc::clone(&self.servers.gate)));
+        self.servers.plays = Some(plays::Reporter::start(Arc::clone(&keys), &chilpa_dirs::data().join("servers")));
         self.servers.keys = Some(keys);
         self.servers.resumed = background::unfinished();
         // A queue restored before the opener existed could not name a

@@ -6693,6 +6693,9 @@ msgstr ""
 msgid "Report an issue"
 msgstr "回報問題"
 
+msgid "Report plays to servers"
+msgstr "向伺服器回報播放"
+
 msgid "Report plugin errors in the corresponding plugin's repository."
 msgstr "請在對應外掛的儲存庫中回報外掛錯誤。"
 
@@ -7863,6 +7866,9 @@ msgstr "目標響度"
 
 msgid "Technical data"
 msgstr ""
+
+msgid "Tells a Subsonic server such as Navidrome what is playing, and counts each track played past halfway or for four minutes in its play count. Plays made offline go when the server can be reached."
+msgstr "告訴 Navidrome 等 Subsonic 伺服器目前正在播放的曲目，並將播放超過一半或四分鐘的曲目計入播放次數。離線時的播放會在連上伺服器後送出。"
 
 msgid "Temporary episode storage is unavailable."
 msgstr "暫存單集儲存空間無法使用。"
@@ -11050,6 +11056,9 @@ msgstr "此伺服器不接受來自 Chilpa 的播放清單說明"
 
 msgid "this server keeps no favorites Chilpa can change"
 msgstr ""
+
+msgid "this server keeps no plays Chilpa can report"
+msgstr "此伺服器不保存 Chilpa 可回報的播放紀錄"
 
 msgid "this server keeps no ratings Chilpa can change"
 msgstr ""

@@ -300,6 +300,15 @@ pub const SECTIONS: &[Section] = &[
                 )],
             },
             Group {
+                title: Chilpa::mark("Plays"),
+                settings: &[setting(
+                    crate::servers::plays::REPORT,
+                    Chilpa::mark("Report plays to servers"),
+                    Chilpa::mark("Tells a Subsonic server such as Navidrome what is playing, and counts each track played past halfway or for four minutes in its play count. Plays made offline go when the server can be reached."),
+                    Control::Toggle,
+                )],
+            },
+            Group {
                 title: Chilpa::mark("Maintenance"),
                 settings: &[
                     action("library.repair", Chilpa::mark("Repair the library"), Chilpa::mark("Rebuilds the counts and the search index from the tracks and the play log. Nothing is lost."), Control::Button, Chilpa::mark("Repair")),

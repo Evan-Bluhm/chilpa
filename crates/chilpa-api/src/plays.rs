@@ -173,7 +173,7 @@ impl Chilpa {
     pub(crate) fn record(&mut self, written: Written<InProgress>, shown: bool) {
         let Written { mut listen, skipped } = written;
         // The count it was closed with may be the one that makes it count.
-        crate::scrobble::if_heard(self.scrobbler.as_ref(), &mut listen);
+        crate::scrobble::if_heard(self.scrobbler.as_ref(), self.servers.plays.as_ref(), &mut listen);
         self.record_listen(listen, skipped, shown);
     }
 

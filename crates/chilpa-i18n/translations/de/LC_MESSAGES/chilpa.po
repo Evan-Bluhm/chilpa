@@ -6691,6 +6691,9 @@ msgstr ""
 msgid "Report an issue"
 msgstr "Problem melden"
 
+msgid "Report plays to servers"
+msgstr "Wiedergaben an Server melden"
+
 msgid "Report plugin errors in the corresponding plugin's repository."
 msgstr "Pluginfehler im Repository des jeweiligen Plugins melden."
 
@@ -7865,6 +7868,9 @@ msgstr "Ziel-Lautheit"
 
 msgid "Technical data"
 msgstr "Technische Daten"
+
+msgid "Tells a Subsonic server such as Navidrome what is playing, and counts each track played past halfway or for four minutes in its play count. Plays made offline go when the server can be reached."
+msgstr "Teilt einem Subsonic-Server wie Navidrome mit, was gerade läuft, und zählt jeden Titel, der über die Hälfte oder vier Minuten lang gehört wurde, zu seinen Wiedergaben. Offline gehörte Titel werden gemeldet, sobald der Server erreichbar ist."
 
 msgid "Temporary episode storage is unavailable."
 msgstr ""
@@ -11056,6 +11062,9 @@ msgstr "dieser Server übernimmt die Beschreibung einer Playlist nicht von Chilp
 
 msgid "this server keeps no favorites Chilpa can change"
 msgstr "dieser Server speichert keine Favoriten, die Chilpa ändern kann"
+
+msgid "this server keeps no plays Chilpa can report"
+msgstr "dieser Server speichert keine Wiedergaben, die Chilpa melden kann"
 
 msgid "this server keeps no ratings Chilpa can change"
 msgstr "dieser Server speichert keine Bewertungen, die Chilpa ändern kann"
